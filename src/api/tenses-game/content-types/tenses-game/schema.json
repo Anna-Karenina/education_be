@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tenses_games",
+  "info": {
+    "singularName": "tenses-game",
+    "pluralName": "tenses-games",
+    "displayName": "tenses_game",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "isFinish": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "selected_tenses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tense.tense"
+    },
+    "tenses_game_carts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tenses-game-cart.tenses-game-cart",
+      "mappedBy": "tenses_game"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

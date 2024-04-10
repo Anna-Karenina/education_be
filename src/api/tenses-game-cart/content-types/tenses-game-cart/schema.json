@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tenses_game_carts",
+  "info": {
+    "singularName": "tenses-game-cart",
+    "pluralName": "tenses-game-carts",
+    "displayName": "tenses_game_cart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "GUESSED",
+        "ERROR",
+        "IN_GAME"
+      ],
+      "default": "IN_GAME"
+    },
+    "tenses_game": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tenses-game.tenses-game",
+      "inversedBy": "tenses_game_carts"
+    },
+    "tenses_card": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tenses-card.tenses-card"
+    }
+  }
+}

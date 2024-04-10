@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tenses_cards",
+  "info": {
+    "singularName": "tenses-card",
+    "pluralName": "tenses-cards",
+    "displayName": "tenses_card",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "when_we_use",
+        "signal_words",
+        "auxiliary_verb"
+      ]
+    },
+    "tense": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tense.tense",
+      "inversedBy": "tenses_cards"
+    }
+  }
+}
